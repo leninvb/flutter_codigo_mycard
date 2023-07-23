@@ -1,125 +1,144 @@
 import 'package:flutter/material.dart';
+void main(){
+  runApp(MyApp());
 
-void main() {
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      home: Scaffold(
+        backgroundColor: Colors.indigo,
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                 CircleAvatar(
+                   radius: 100.0,
+                   backgroundColor: Colors.white60,
+                   backgroundImage: AssetImage("assets/images/persona1.jpg"),
+                   //backgroundImage: NetworkImage("https://scontent.faqp1-1.fna.fbcdn.net/v/t39.30808-6/345609860_139062992420571_222276409233280973_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeED5PAGyYDAcnHesBegVS71qGVOcUPtG6uoZU5xQ-0bq-xr51hKYrF7wUmSU8Zc_JY&_nc_ohc=2QTE1ytIlEsAX9iOiko&_nc_ht=scontent.faqp1-1.fna&oh=00_AfDhL4h8PBuXIGqJpc2_Eec-MqBS7s6XIRxOy6NzpIgLmg&oe=64C0AC11"),
+                 ),
+                   SizedBox(
+                     height: 12.0,
+                   ),
+                   Text("Mitjal Mery Chacana",
+                   style: TextStyle(
+                     color: Colors.white,
+                     fontSize: 30.0,
+                     fontWeight: FontWeight.w700,
+                     fontFamily: "Caveat",
+                   ),
+                   ),
+                   SizedBox(
+                     height: 7.0,
+                   ),
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+                   Text("Flutter Developer",
+                     style: TextStyle(
+                       color: Colors.white60,
+                       fontSize: 16.0,
+                       fontWeight: FontWeight.w400,
+                       letterSpacing: 3.0,
+                   ),
+                   ),
+                   SizedBox(
+                     width: 170.0,
+                     child: Divider(
+                       thickness: 0.5,
+                       color: Colors.white38,
+                       indent: 20.0,
+                       endIndent: 20.0,
+                     ),
+                   ),
+                   SizedBox(
+                     height: 12.0,
+                   ),
+                   Card(
+                     color: Colors.white,
+                     margin: EdgeInsets.symmetric(vertical: 14.0,horizontal: 8.0),
+                     elevation: 20.0,
+                     child: ListTile(
+                       leading: Icon(
+                         Icons.phone,
+                         color: Colors.indigo,
+                         size: 20.0,
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
+                       ),
+                       title: Text("+51 941409103",
+                       style: TextStyle(
+                         fontSize: 20,
+                       ),
+                       ),
+                       subtitle: Text("Telefono",
+                         style: TextStyle(
+                           fontSize: 18,
+                       ),
+                       ),
+                       trailing: Icon(
+                         Icons.check_circle_outline,
+                         color: Colors.indigo,
+                       ),
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+                     ),
+                   ),
+                   Card(
+                     color: Colors.white,
+                     margin: EdgeInsets.symmetric(vertical: 14.0,horizontal: 8.0),
+                     elevation: 20.0,
+                     child: ListTile(
+                       leading: Icon(
+                         Icons.mail,
+                         color: Colors.indigo,
+                         size: 20.0,
 
-  final String title;
+                       ),
+                       title: Text("leninvb@gmail.com",
+                         style: TextStyle(
+                           fontSize: 20,
+                         ),
+                       ),
+                       subtitle: Text("Correo Electronico",
+                         style: TextStyle(
+                           fontSize: 18,
+                         ),
+                       ),
+                       trailing: Icon(
+                         Icons.check_circle_outline,
+                         color: Colors.indigo,
+                       ),
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+                     ),
+                   ),
+                   SizedBox(
+                     height: 12.0,
+                   ),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Image.asset("assets/images/facebook.png",
+                       height: 50.0,
+                       ),
+                       SizedBox(
+                         width: 30.0,
+                       ),
+                       Image.asset("assets/images/gorjeo.png",
+                         height: 50.0,
+                       ),
+                       SizedBox(
+                         width: 30.0,
+                       ),
+                       Image.asset("assets/images/instagram.png",
+                         height: 50.0,
+                       ),
+                     ],
+                   ),
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+                 ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+      );
   }
 }
